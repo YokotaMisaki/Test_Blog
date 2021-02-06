@@ -64,8 +64,7 @@ class BlogController extends Controller
     public function exeStore(BlogRequest $request)
     {
         // もし画像があれば
-        if($file = $request->image) 
-        {
+        if($file = $request->image) {
             // ファイル名をタイムスタンプとアップロードした元ファイル名で生成
             $fileName = time() . $file->getClientOriginalName();
             // storage内のpublic/uploadsファイルに保存
@@ -76,7 +75,7 @@ class BlogController extends Controller
         }else{
             // 画像がない場合は空
             $fileName = "";
-              }
+        }
 
         // タイトルを取得
         $title = $request->title;
@@ -87,16 +86,15 @@ class BlogController extends Controller
         try{
             // データベースに保存
             Blog::create([
-            "title" => $title,
-            "body" => $body,
-            "image" => $fileName
+             "title" => $title,
+             "body" => $body,
+             "image" => $fileName
             ]);
             \DB::commit();
-           } catch(\Throwable $e)
-            {
+        } catch(\Throwable $e){
             \DB::rollback();
             abort(500);
-            }         
+        }         
 
         \Session::flash('err_msg', 'ブログを登録しました。');
         
@@ -120,8 +118,7 @@ class BlogController extends Controller
         $query = Blog::query();
 
         //キーワードが入力されている場合
-        if(!empty($keyword))
-        {
+        if(!empty($keyword)){
         $query->where('title', 'like', '%'.$keyword.'%')
               ->orWhere('body','like','%'.$keyword.'%');
         }
@@ -143,8 +140,7 @@ class BlogController extends Controller
     public function exeDelete($id) 
     {
         // idがない場合
-        if (empty($id)) 
-        {
+        if (empty($id)) {
             \Session::flash('err_msg', 'データがありません。');
             return redirect(route('blogs'));
         }
@@ -152,10 +148,9 @@ class BlogController extends Controller
         // ブログデータを削除する
         try{
             Blog::destroy($id);
-            } catch(\Throwable $e)
-             {
+        } catch(\Throwable $e){
             abort(500);
-             }         
+        }         
 
         \Session::flash('err_msg', '削除しました。');
 

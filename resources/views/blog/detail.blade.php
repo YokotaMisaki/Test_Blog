@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title','ブログ詳細')
 @section('content')
-<!--画像がない場合本文の表示-->
+<?php //画像がない場合本文のみ表示?>
 @empty($blog->image)
 <div class="row">
    <div class="col-md-8 col-md-offset-2 bg-secondary text-light">
@@ -14,9 +14,8 @@
       <div class="contener">
       {{ $blog->body }}
       </div>
-</div>
-      
-<!--画像がある場合本文と画像表示-->
+</div>     
+<?php //画像がある場合本文と画像表示?>
 @else
 <div class="row">
    <div class="col-md-8 col-md-offset-2 bg-secondary text-light">

@@ -43,4 +43,3 @@ Route::get('/search', [BlogController::class, 'getSearch'])->name
 //ブログ削除
 Route::post('/blog/delete/{id}', [BlogController::class,'exeDelete'])->name
 ('delete');
-

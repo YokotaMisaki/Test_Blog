@@ -4,24 +4,21 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-  　<!--ログアウト時のみ表示する-->
  　 @guest
   　　　<a class="nav-item nav-link navbar-light" href="/login">ログイン</a>
   　　　<a class="nav-item nav-link" href="/register">新規登録</a>
   　@endguest
       <a class="nav-item nav-link active" href="{{ route('blogs') }}">ブログ一覧<span class="sr-only"></span></a>
-      <!--ログイン時のみ表示する-->
       @auth<a class="nav-item nav-link" href="{{ route('create') }}">ブログ投稿</a>@endauth
-      <!--ログイン時のみ表示する-->
       @auth
-      <form class="form-inline" method="POST" action="{{ route('logout') }}">
-            @csrf
-　　　     <a class="center" href="{{ route('logout') }}"
-        　　onclick="event.preventDefault();
-        　　this.closest('form').submit();">
-       　 {{ __('ログアウト') }}
-   　　　　　 </a>
-    　</form>
+      <form method="POST" action="{{ route('logout') }}">
+      @csrf
+        <x-jet-dropdown-link href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                  {{ __('ログアウト') }}
+        </x-jet-dropdown-link>
+      </form>
     　@endauth
   </div>
 </nav>

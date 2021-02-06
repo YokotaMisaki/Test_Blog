@@ -14,6 +14,6 @@ class Blog extends Model
     [
         'title',
         'body',
-        "image"
+        'image'
     ];
 }
