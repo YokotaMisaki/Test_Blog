@@ -2,15 +2,14 @@
 @section('title','ブログ一覧')
 @section('content')
   <div class="row">
+  <script src="{{ asset('/js/search.js') }}"></script>
   <script src="{{ asset('/js/delete.js') }}"></script>
    <div class="col-md-8 col-md-offset-2">
       <h2>ブログ記事一覧</h2>
-        <form class="form-inline" action="{{url('/search')}}" method="GET">
             <div class="form-group">
-             <input type="text" name="keyword" value="@if (isset( $keyword )) @endif" class="form-control" placeholder="キーワード入力">
-             <input type="submit" value="検索" >
+            <input type="text" name="keyword" value="@if (isset( $keyword )) @endif" id="keyword" placeholder="キーワード入力">
+             <button type="button" id="search-icon"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
              </div>
-        </form>
       @if (session('err_msg'))
           <p class="text-danger">{{ session('err_msg') }}
           </p>

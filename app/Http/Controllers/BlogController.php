@@ -125,11 +125,16 @@ class BlogController extends Controller
         
         // 検索結果を5件ごとに表示
         $blogs = $query->paginate(5);
-        
-        // 検索結果をブログ一覧に表示
-        return view('blog.list')->with(compact("blogs","keyword"));   
-    }
 
+        // 検索結果をブログ一覧に表示
+        return response()->json($blogs);
+        
+        }
+
+
+
+
+       
 
     /**
      * ブログ削除する
