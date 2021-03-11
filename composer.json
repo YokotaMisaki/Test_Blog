@@ -20,7 +20,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.1",
         "laravelcollective/html": "6.*",
-        "livewire/livewire": "^2.0",
+        "livewire/livewire": "^2.4",
         "spatie/laravel-searchable": "^1.9"
     },
     "require-dev": {

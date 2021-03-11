@@ -6,7 +6,6 @@
     cntent="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js" defer></script>
 </head>
 <body>
     <header>

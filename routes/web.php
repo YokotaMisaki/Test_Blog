@@ -40,7 +40,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/search', [BlogController::class, 'getSearch'])->name
 ('search');
 
-
 //ブログ削除
 Route::post('/blog/delete/{id}', [BlogController::class,'exeDelete'])->name
 ('delete');

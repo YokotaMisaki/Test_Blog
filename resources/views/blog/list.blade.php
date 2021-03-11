@@ -6,15 +6,17 @@
   <script src="{{ asset('/js/delete.js') }}"></script>
    <div class="col-md-8 col-md-offset-2">
       <h2>ブログ記事一覧</h2>
-            <div class="form-group">
-            <input type="text" name="keyword" value="@if (isset( $keyword )) @endif" id="keyword" placeholder="キーワード入力">
-             <button type="button" id="search-icon"><i class="fa fa-search" aria-hidden="true"></i>検索</button>
-             </div>
+          <div class="form-group">
+            <form id="search">
+             <input type="text" name="keyword" value="@if (isset( $keyword )) @endif" id="keyword" placeholder="キーワード入力" >
+             <input type="button" id="search-icon" value="検索" onclick="buttonClick()">
+             </form>
+          </div>  
       @if (session('err_msg'))
           <p class="text-danger">{{ session('err_msg') }}
           </p>
       @endif
-      <table class="table table-striped">
+      <table class="table table-striped" id="table">
           <tr>
         　  <th>記事番号</th>
         　  <th>タイトル</th>

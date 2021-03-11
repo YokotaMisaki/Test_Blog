@@ -1,29 +1,31 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "@tailwindcss/ui": "^0.6.0",
-        "alpinejs": "^2.7.3",
-        "axios": "^0.19",
-        "bootstrap": "^4.0.0",
-        "cross-env": "^7.0",
-        "jquery": "^3.2",
-        "laravel-mix": "^5.0.1",
-        "lodash": "^4.17.19",
-        "popper.js": "^1.12",
-        "postcss-import": "^12.0.1",
-        "resolve-url-loader": "^3.1.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^8.0.0",
-        "tailwindcss": "^1.8.0",
-        "vue-template-compiler": "^2.6.12"
-    }
+  "name": "test",
+  "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\"></a></p>",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YokotaMisaki/Test_Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YokotaMisaki/Test_Blog/issues"
+  },
+  "homepage": "https://github.com/YokotaMisaki/Test_Blog#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "webpack": "^5.23.0"
+  },
+  "devDependencies": {
+    "jquery-ui": "^1.12.1",
+    "webpack-cli": "^4.5.0"
+  }
 }

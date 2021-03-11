@@ -22,6 +22,7 @@ class BlogController extends Controller
 
         //ブログ一覧を表示
         return view('blog.list', ['blogs' => $blogs]);
+        
     }
 
     /**
@@ -100,6 +101,7 @@ class BlogController extends Controller
         
         // ブログ登録に成功したらブログ一覧に返す
         return redirect (route('blogs'));  
+        
     }
 
     
@@ -125,9 +127,11 @@ class BlogController extends Controller
         
         // 検索結果を5件ごとに表示
         $blogs = $query->paginate(5);
+        
 
         // 検索結果をブログ一覧に表示
-        return response()->json($blogs);
+        return response()->json(['blogs' => $blogs]);
+        //($blogs);
         
         }
 
@@ -161,5 +165,6 @@ class BlogController extends Controller
 
         // ブログ一覧を表示
         return redirect(route('blogs'));
+        
     } 
 }
