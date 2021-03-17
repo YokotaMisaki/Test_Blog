@@ -118,6 +118,7 @@ class BlogController extends Controller
 
         //クエリ作成
         $query = Blog::query();
+        
 
         //キーワードが入力されている場合
         if(!empty($keyword)){
@@ -130,8 +131,9 @@ class BlogController extends Controller
         
 
         // 検索結果をブログ一覧に表示
-        return response()->json(['blogs' => $blogs]);
-        //($blogs);
+        return view('blog.list')->with(compact("blogs","keyword"));
+    
+
         
         }
 
